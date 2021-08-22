@@ -24,7 +24,7 @@ defmodule PhoenixVuecliWeb.Endpoint do
     at: "/",
     from: :phoenixVuecli,
     gzip: false,
-    only: ~w(vue css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt)
 
   plug Plug.Static,
     at: "/",
