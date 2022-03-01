@@ -4,11 +4,11 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>PhoenixVuecli · Phoenix Framework</title>
-    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <title>PhoenixVuecli · Phoenix Framework123</title>
+    <link rel="stylesheet" href={Routes.static_path(@conn, "/css/app.css")}/>
     <link href="/vue/js/app.js" rel="preload" as="script">
-    <link href="/vue/js/chunk-vendors.js" rel="preload" as="script"></head>
-    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <link href="/vue/js/chunk-vendors.js" rel="preload" as="script">
+    <script defer type="text/javascript" src={Routes.static_path(@conn, "/js/app.js")}></script>
   </head>
   <body>
     <header>
@@ -22,7 +22,7 @@
           </ul>
         </nav>
         <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
+          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
         </a>
       </section>
     </header>

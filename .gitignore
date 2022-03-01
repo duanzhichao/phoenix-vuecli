@@ -29,3 +29,4 @@ phoenixVuecli-*.tar
 
 .elixir_ls
 mix.lock
+.Ds_Store
