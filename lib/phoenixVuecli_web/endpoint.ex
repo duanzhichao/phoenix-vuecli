@@ -7,12 +7,8 @@ defmodule PhoenixVuecliWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_phoenixVuecli_key",
-    signing_salt: "fc31623s"
+    signing_salt: "lMlxW8sh"
   ]
-
-  socket "/socket", PhoenixVuecliWeb.UserSocket,
-    websocket: true,
-    longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
@@ -24,7 +20,7 @@ defmodule PhoenixVuecliWeb.Endpoint do
     at: "/",
     from: :phoenixVuecli,
     gzip: false,
-    only: ~w(vue css fonts images js favicon.ico robots.txt)
+    only: ~w(vue assets fonts images favicon.ico robots.txt)
 
   plug Plug.Static,
     at: "/",
@@ -33,14 +29,12 @@ defmodule PhoenixVuecliWeb.Endpoint do
     only: ~w(index.html manifest.json service-worker.js css fonts img js favicon.ico robots.txt),
     only_matching: ["precache-manifest"]
 
-
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :phoenixVuecli
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

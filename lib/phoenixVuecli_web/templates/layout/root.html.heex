@@ -4,16 +4,15 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>PhoenixVuecli · Phoenix Framework123</title>
-    <link rel="stylesheet" href={Routes.static_path(@conn, "/css/app.css")}/>
-    <link href="/vue/js/app.js" rel="preload" as="script">
-    <link href="/vue/js/chunk-vendors.js" rel="preload" as="script">
-    <script defer type="text/javascript" src={Routes.static_path(@conn, "/js/app.js")}></script>
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "PhoenixVuecli", suffix: " · Phoenix Framework" %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
   <body>
     <header>
       <section class="container">
-        <nav role="navigation">
+        <nav>
           <ul>
             <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
@@ -26,11 +25,7 @@
         </a>
       </section>
     </header>
-    <main role="main" class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= @inner_content %>
-    </main>
+    <%= @inner_content %>
   </body>
 </html>
 <script type="text/javascript" src="/vue/js/chunk-vendors.js"></script>
